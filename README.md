@@ -3,7 +3,7 @@ jrowen/dcaret
 
 [![Build Status](https://travis-ci.org/jrowen/dcaret.svg?branch=master)](https://travis-ci.org/jrowen/dcaret)
 
-Based on rocker/hadleyverse.
+Based on [rocker/hadleyverse](https://github.com/rocker-org/hadleyverse).
 
 See the [rocker-org Wiki](https://github.com/rocker-org/rocker/wiki/)
 for details on use and development of this Docker image.
