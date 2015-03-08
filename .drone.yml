@@ -1,4 +1,4 @@
-image: jrowen/dcaret 
+image: jrowen/dh2o
 
   ## Note that we can only test packages for which we've installed all suggested dependencies; not for all installed packages
 script:

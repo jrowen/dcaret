@@ -5,11 +5,11 @@ dependencies:
   cache_directories:
         - "~/docker"
   override:
-    - docker pull jrowen/dcaret 
+    - docker pull jrowen/dh2o 
 
 
 test:
   override:
-    - docker run -ti jrowen/dcaret R --version 
+    - docker run -ti jrowen/dh2o R --version 
 
 
