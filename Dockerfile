@@ -1,41 +1,136 @@
 FROM rocker/hadleyverse
 MAINTAINER "Jonathan Owen" jonathanro@gmail.com
 
-# Install Java.
-RUN \
-  echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
-  add-apt-repository -y ppa:webupd8team/java && \
-  apt-get update && \
-  apt-get install -y oracle-java7-installer && \
-  rm -rf /var/lib/apt/lists/* && \
-  rm -rf /var/cache/oracle-jdk7-installer
-
-# Define commonly used JAVA_HOME variable
-ENV JAVA_HOME /usr/lib/jvm/java-7-oracle
-
-# Fetch h2o mirzakhani
-RUN \
-  wget http://h2o-release.s3.amazonaws.com/h2o/rel-noether/4/h2o-2.8.4.4.zip -O /opt/h2o.zip && \
-  unzip -d /opt /opt/h2o.zip && \
-  rm /opt/h2o.zip && \
-  cd /opt && \
-  cd `find . -name 'h2o.jar' | sed 's/.\///;s/\/h2o.jar//g'` && \ 
-  cp h2o.jar /opt && \
-  wget https://s3.amazonaws.com/h2o-training/mnist/train.csv.gz && \
-  gunzip train.csv.gz 
-
-EXPOSE 54321
-EXPOSE 54322
-
 # install caret related packages
 RUN install2.r --error \
-    RCurl \
-    rjson \
-    statmod \
-    survival \
-    stats \
-    tools \
-    utils \
-    methods \
-    h2o \
+    minqa \
+    nloptr \ 
+    RcppEigen \
+    profileModel \
+    pbkrtest \
+    iterators \ 
+    lme4 \
+    brglm \
+    gtools \
+    car \
+    foreach \ 
+    BradleyTerry2 \
+    caret
+&& install2.r \
+    Cubist \
+    e1071 \
+    earth \
+    fastICA \
+    gam \
+    ipred \
+    kernlab \ 
+    klaR \ 
+    ellipse \
+    mda \
+    mgcv \
+    mlbench \
+    nnet \
+    party \
+    pamr \
+    pls \
+    pROC \
+    proxy \
+    randomForest \
+    RANN \
+    spls \
+    subselect \
+    superpc
+# install caretEnsemble related packages
+&& install2.r --error \
+    caretEnsemble
+&& install2.r \
+    caTools \
+    digest \
+    gbm \
+    pbapply \
+    rpart
+# add all model libs
+&& install2.r \
+    Boruta \
+    C50 \
+    Cubist \
+    HDclassif \
+    HiDimDA \
+    KRLS \
+    LogicReg \
+    MASS \
+    RRF \
+    RSNNS \
+    RWeka \
+    SDDA \
+    ada \
+    adabag \
+    adaptDA \
+    arm \
+    binda \
+    brnn \
+    bst \
+    caTools \
+    caret \
+    class \
+    deepnet \
+    earth \
+    elasticnet \
+    elmNN \
+    enpls \
+    evtree \
+    extraTrees \
+    fastICA \
+    foba \
+    frbs \
+    gam \
+    gbm \
+    glmnet \
+    gpls \
+    hda \
+    ipred \
+    kernlab \
+    kknn \
+    klaR \
+    kohonen \
+    lars \
+    leaps \
+    logicFS \
+    mboost \
+    mda \
+    mgcv \
+    neuralnet \
+    nnet \
+    nodeHarvest \
+    oblique.tree \
+    obliqueRF \
+    pamr \
+    partDSA \
+    party \
+    penalized \
+    penalizedLDA \
+    pls \
+    plsRglm \
+    plyr \
+    protoclass \
+    proxy \
+    qrnn \
+    quantregForest \
+    rFerns \
+    randomForest \
+    relaxo \
+    rknn \
+    robustDA \
+    rocc \
+    rpart \
+    rrcov \
+    rrcovHD \
+    rrlda \
+    sda \
+    sparseLDA \
+    spls \
+    stepPlr \
+    superpc \
+    vbmp \
+    wsrf
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
