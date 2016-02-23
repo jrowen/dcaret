@@ -1,0 +1,11 @@
+machine:
+  services:
+    - docker
+dependencies:
+  override:
+    - docker pull jrowen/dcaret 
+
+
+test:
+  override:
+    - docker run -ti jrowen/dcaret R --version
