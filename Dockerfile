@@ -134,3 +134,6 @@ RUN install2.r --error \
     vbmp \
     wsrf
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
+
+VOLUME /workspace
+WORKDIR /workspace
