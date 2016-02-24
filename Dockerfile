@@ -136,7 +136,7 @@ RUN install2.r \
     stepPlr \
     superpc \
     vbmp \
-    wsrf
+    wsrf \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 VOLUME /workspace
