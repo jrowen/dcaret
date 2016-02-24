@@ -16,7 +16,8 @@ RUN install2.r --error \
     foreach \ 
     BradleyTerry2 \
     caret
-&& install2.r \
+    
+RUN install2.r --error \
     Cubist \
     e1071 \
     earth \
@@ -40,17 +41,20 @@ RUN install2.r --error \
     spls \
     subselect \
     superpc
+
 # install caretEnsemble related packages
-&& install2.r --error \
+RUN install2.r --error \
     caretEnsemble
-&& install2.r \
+
+RUN install2.r --error \
     caTools \
     digest \
     gbm \
     pbapply \
     rpart
+    
 # add all model libs
-&& install2.r \
+RUN install2.r --error \
     Boruta \
     C50 \
     Cubist \
