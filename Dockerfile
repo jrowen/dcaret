@@ -17,7 +17,7 @@ RUN install2.r --error \
     BradleyTerry2 \
     caret
     
-RUN install2.r --error \
+RUN install2.r \
     Cubist \
     e1071 \
     earth \
@@ -46,7 +46,7 @@ RUN install2.r --error \
 RUN install2.r --error \
     caretEnsemble
 
-RUN install2.r --error \
+RUN install2.r \
     caTools \
     digest \
     gbm \
@@ -54,7 +54,7 @@ RUN install2.r --error \
     rpart
     
 # add all model libs
-RUN install2.r --error \
+RUN install2.r \
     Boruta \
     C50 \
     Cubist \
