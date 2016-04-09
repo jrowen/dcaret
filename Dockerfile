@@ -1,6 +1,20 @@
 FROM rocker/hadleyverse
 MAINTAINER "Jonathan Owen" jonathanro@gmail.com
 
+# install rstudio/shiny/rmarkdown related packages
+RUN install2.r \
+    digest \
+    Rcpp \
+    htmltools \
+    htmlwidgets \
+    yaml \
+    shiny \
+    rstudioapi \
+    miniUI \
+    jsonlite \
+    knitr \
+    rmarkdown \
+
 # install caret related packages
 RUN install2.r --error \
     minqa \
