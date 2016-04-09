@@ -2,7 +2,7 @@ FROM rocker/hadleyverse
 MAINTAINER "Jonathan Owen" jonathanro@gmail.com
 
 # install rstudio/shiny/rmarkdown related packages
-RUN install2.r \
+RUN install2.r --error \
     digest \
     Rcpp \
     htmltools \
@@ -13,7 +13,7 @@ RUN install2.r \
     miniUI \
     jsonlite \
     knitr \
-    rmarkdown \
+    rmarkdown
 
 # install caret related packages
 RUN install2.r --error \
