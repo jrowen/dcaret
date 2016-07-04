@@ -1,127 +1,71 @@
 FROM rocker/hadleyverse
 MAINTAINER "Jonathan Owen" jonathanro@gmail.com
 
-# install rstudio/shiny/rmarkdown related packages
-RUN install2.r --error \
-    digest \
-    Rcpp \
-    htmltools \
-    htmlwidgets \
-    yaml \
-    shiny \
-    rstudioapi \
-    miniUI \
-    jsonlite \
-    knitr \
-    rmarkdown
-
-# install caret related packages
-RUN install2.r --error \
-    minqa \
-    nloptr \ 
-    RcppEigen \
-    profileModel \
-    pbkrtest \
-    iterators \ 
-    lme4 \
-    brglm \
-    gtools \
-    car \
-    foreach \ 
-    BradleyTerry2 \
-    caret
-    
-RUN install2.r \
-    Cubist \
-    e1071 \
-    earth \
-    fastICA \
-    gam \
-    ipred \
-    kernlab \ 
-    klaR \ 
-    ellipse \
-    mda \
-    mgcv \
-    mlbench \
-    nnet \
-    party \
-    pamr \
-    pls \
-    pROC \
-    proxy \
-    randomForest \
-    RANN \
-    spls \
-    subselect \
-    superpc
-
-# install caretEnsemble related packages
-RUN install2.r --error \
-    caretEnsemble
-
-RUN install2.r \
-    caTools \
-    digest \
-    gbm \
-    pbapply \
-    rpart
-    
-# add all model libs
-RUN install2.r \
-    Boruta \
-    C50 \
-    Cubist \
-    HDclassif \
-    HiDimDA \
-    KRLS \
-    LogicReg \
-    MASS \
-    RRF \
-    RSNNS \
-    RWeka \
-    SDDA \
+# install caret and related packages
+RUN install2.r --deps --error \
+    caret \
+    caretEnsemble \
     ada \
     adabag \
     adaptDA \
     arm \
+    bartMachine \
     binda \
+    bnclassify \
+    Boruta \
     brnn \
     bst \
+    C50 \
     caTools \
-    caret \
+    CHAID \
     class \
+    Cubist \
+    deepboost \
     deepnet \
+    e1071 \
     earth \
     elasticnet \
     elmNN \
     enpls \
     evtree \
     extraTrees \
+    fastAdaboost \
     fastICA \
+    FCNN4R \
     foba \
+    foreach \
     frbs \
     gam \
     gbm \
     glmnet \
     gpls \
     hda \
+    HDclassif \
+    HiDimDA \
+    inTrees \
     ipred \
+    kerndwd \
     kernlab \
     kknn \
     klaR \
     kohonen \
+    KRLS \
     lars \
     leaps \
     logicFS \
+    LogicReg \
+    MASS \
     mboost \
     mda \
     mgcv \
+    monomvn \
     neuralnet \
     nnet \
+    nnls \
     nodeHarvest \
     oblique.tree \
     obliqueRF \
+    ordinalNet \
     pamr \
     partDSA \
     party \
@@ -134,23 +78,39 @@ RUN install2.r \
     proxy \
     qrnn \
     quantregForest \
-    rFerns \
     randomForest \
+    randomGLM \
+    ranger \
+    Rborist \
     relaxo \
-    rknn \
+    rFerns \
     robustDA \
     rocc \
+    rotationForest \
     rpart \
+    rpartScore \
+    rPython \
+    rqPen \
     rrcov \
     rrcovHD \
+    RRF \
     rrlda \
+    RSNNS \
+    RWeka \
     sda \
+    SDDA \
+    sdwd \
+    snn \
+    sparsediscrim \
     sparseLDA \
+    spikeslab \
     spls \
     stepPlr \
     superpc \
     vbmp \
+    VGAM \
     wsrf \
+    xgboost \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 VOLUME /workspace
