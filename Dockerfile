@@ -2,14 +2,12 @@ FROM rocker/hadleyverse
 MAINTAINER "Jonathan Owen" jonathanro@gmail.com
 
 # install caret
-RUN install2.r --deps \
+RUN install2.r --deps --error \
     caret \
-    caretEnsemble \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 # install related packages
 RUN install2.r --deps \
-    caret \
     caretEnsemble \
     ada \
     adabag \
