@@ -2,12 +2,22 @@ FROM rocker/hadleyverse
 MAINTAINER "Jonathan Owen" jonathanro@gmail.com
 
 # install caret
-RUN install2.r --deps --error \
+RUN install2.r --error \
+    minqa \
+    nloptr \ 
+    RcppEigen \
+    profileModel \
+    pbkrtest \
+    lme4 \
+    brglm \
+    gtools \
+    car \
+    BradleyTerry2 \
     caret \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 # install related packages
-RUN install2.r --deps \
+RUN install2.r \
     caretEnsemble \
     ada \
     adabag \
