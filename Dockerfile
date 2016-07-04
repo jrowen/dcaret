@@ -2,7 +2,7 @@ FROM rocker/hadleyverse
 MAINTAINER "Jonathan Owen" jonathanro@gmail.com
 
 # install caret
-RUN install2.r --deps --error \
+RUN install2.r --deps \
     caret \
     caretEnsemble \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
