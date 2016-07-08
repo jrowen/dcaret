@@ -141,6 +141,7 @@ RUN install2.r \
     plyr \
     protoclass \
     proxy \
+	pROC \
     qrnn \
     quantregForest \
     randomForest \
