@@ -5,7 +5,7 @@ MAINTAINER "Jonathan Owen" jonathanro@gmail.com
 RUN install2.r --error \
     minqa \
     nloptr \ 
-    RcppEigen \
+    #RcppEigen \
     profileModel \
     pbkrtest \
     lme4 \
@@ -29,7 +29,6 @@ RUN install2.r \
     brnn \
     bst \
     C50 \
-    caret \
     caTools \
     CHAID \
     class \
