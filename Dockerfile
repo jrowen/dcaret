@@ -26,21 +26,21 @@ RUN install2.r \
     bartMachine \
     binda \
     bnclassify \
-    Boruta \
     brnn \
     bst \
     C50 \
+    caret \
     caTools \
     CHAID \
     class \
     Cubist \
     deepboost \
     deepnet \
+    dplyr \
     e1071 \
     earth \
     elasticnet \
     elmNN \
-    enpls \
     evtree \
     extraTrees \
     fastAdaboost \
@@ -53,11 +53,14 @@ RUN install2.r \
     gbm \
     glmnet \
     gpls \
+    h2o \
     hda \
     HDclassif \
     HiDimDA \
+    import \
     inTrees \
     ipred \
+    keras \
     kerndwd \
     kernlab \
     kknn \
@@ -66,18 +69,23 @@ RUN install2.r \
     KRLS \
     lars \
     leaps \
+    LiblineaR \
     logicFS \
     LogicReg \
     MASS \
+    Matrix \
     mboost \
     mda \
     mgcv \
+    monmlp \
     monomvn \
+    msaenet \
+    mxnet \
+    naivebayes \
     neuralnet \
     nnet \
     nnls \
     nodeHarvest \
-    oblique.tree \
     obliqueRF \
     ordinalNet \
     pamr \
@@ -90,7 +98,6 @@ RUN install2.r \
     plyr \
     protoclass \
     proxy \
-	pROC \
     qrnn \
     quantregForest \
     randomForest \
@@ -104,7 +111,6 @@ RUN install2.r \
     rotationForest \
     rpart \
     rpartScore \
-    rPython \
     rqPen \
     rrcov \
     rrcovHD \
@@ -113,7 +119,6 @@ RUN install2.r \
     RSNNS \
     RWeka \
     sda \
-    SDDA \
     sdwd \
     snn \
     sparsediscrim \
@@ -122,6 +127,7 @@ RUN install2.r \
     spls \
     stepPlr \
     superpc \
+    supervisedPRIM \
     vbmp \
     VGAM \
     wsrf \
