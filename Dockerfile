@@ -1,5 +1,8 @@
-FROM rocker/hadleyverse
+FROM rocker/tidyverse
 MAINTAINER "Jonathan Owen" jonathanro@gmail.com
+
+RUN apt-get update -qq && apt-get -y --no-install-recommends install \ 
+    r-cran-rcppeigen
 
 # install caret
 RUN install2.r --error \
