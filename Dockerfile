@@ -1,7 +1,8 @@
 FROM rocker/tidyverse
 MAINTAINER "Jonathan Owen" jonathanro@gmail.com
 
-RUN apt-get update -qq && apt-get -y --no-install-recommends install \ 
+RUN add-apt-repository ppa:marutter/rrutter \
+    && apt-get update -qq && apt-get -y --no-install-recommends install \ 
     r-cran-rcppeigen
 
 # install caret
