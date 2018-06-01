@@ -3,6 +3,9 @@ jrowen/dcaret
 
 [![Build Status](https://travis-ci.org/jrowen/dcaret.svg?branch=master)](https://travis-ci.org/jrowen/dcaret)
 
+[![Docker Build Status](https://img.shields.io/docker/build/jrowen/dcaret.svg)](https://hub.docker.com/r/jrowen/dcaret/)
+
+
 Based on [rocker/hadleyverse](https://github.com/rocker-org/hadleyverse). Adds the [caret](http://topepo.github.io/caret/index.html) library and all available [model](http://topepo.github.io/caret/modelList.html) libraries.
 
 See the [rocker-org Wiki](https://github.com/rocker-org/rocker/wiki/)
