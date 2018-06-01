@@ -1,16 +1,11 @@
 FROM rocker/tidyverse
 MAINTAINER "Jonathan Owen" jonathanro@gmail.com
 
-RUN apt-get -y --no-install-recommends install software-properties-common gpg \
-    && add-apt-repository ppa:marutter/rrutter \
-    && apt-get update -qq && apt-get -y --no-install-recommends install \ 
-    r-cran-rcppeigen
-
 # install caret
 RUN install2.r --error \
     minqa \
     nloptr \ 
-    #RcppEigen \
+    RcppEigen \
     profileModel \
     pbkrtest \
     lme4 \
